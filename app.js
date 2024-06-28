@@ -9,14 +9,14 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
-    //res.send("VIVERO APP 9 !! ");
-    const PORT = process.env.PORT || 3000;
-    const HOST = process.env.HOST || 3000;
+    res.send("VIVERO APP 9 !! ");
+    
     res.send(`${HOST}:${PORT}`);
 
 });
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, ()=> console.log(`http://localhost:${PORT}`));
+const HOST = process.env.HOST || 'http://localhost';
+app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));
 
 /*console.log("VIVERO backend!!");
 const PORT = process.env.PORT || 3000;
