@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
-    res.send("VIVERO APP 10 !! ");
+    res.send("VIVERO APP 11 !! ");
 });
 
 app.get("/productos", (req,res) =>{
