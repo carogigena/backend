@@ -1,3 +1,11 @@
+const express = require("express");
+//const morgan = require('morgan');
+
+const app = express();
+app.get("/", (req, res)=> {
+    res.send("VIVERO APP 5 !!");
+
+});
 //const mySql = require("mysql2");
 //const dotenv = require("dotenv");
 /*dotenv.config()
@@ -61,4 +69,4 @@ connection.connect((err) =>
 });
 });*/
 
-module.exports = connection;
+//module.exports = connection;
