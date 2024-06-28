@@ -5,11 +5,11 @@ const database = require("./db");
 const app = express();
 
 //Uso middleware
-app.use(express.json());
-app.use(morgan("dev"));
+//app.use(express.json());
+//app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
-    res.send("VIVERO APP 222 !!");
+    res.send("VIVERO APP 3 !!");
 
 });
 console.log("VIVERO backend!!");
