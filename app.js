@@ -5,13 +5,16 @@ const express = require("express");
 const app = express();
 
 //Uso middleware
-app.use(express.json());
-app.use(morgan("dev"));
+//app.use(express.json());
+//app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
     res.send("VIVERO APP 8 !! ");
 
 });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, ()=> console.log(`http://localhost:${PORT}`));
+
 /*console.log("VIVERO backend!!");
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST|| 'http://localhost';
