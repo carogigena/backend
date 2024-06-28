@@ -6,10 +6,10 @@ dotenv.config()
 
 const connection = mySql.createConnection(
     {
-        host: process.env.host,
-        user: process.env.user,
-        password: process.env.password,
-        database: process.env.database,
+        host: 'mysql-jcgigena.alwaysdata.net',//process.env.host,
+        user: 'jcgigena',//process.env.user,
+        password: '&Grupo28',//process.env.password,
+        database: 'jcgigena_vivero'//process.env.database,
 });  
 
 connection.connect((err) =>
@@ -17,7 +17,7 @@ connection.connect((err) =>
     if(err)
         {
             console.error("Error conectando a la base de datos", err);
-            return;
+            return ;
         }
     
     console.log("Conectado a la base de datos");
