@@ -1,6 +1,6 @@
 const express = require("express");
 //const morgan = require('morgan');
-//const database = require("./db");
+const database = require("./db");
 
 const app = express();
 
@@ -9,7 +9,7 @@ const app = express();
 //app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
-    res.send("VIVERO APP 4 !!");
+    res.send("VIVERO APP 5 !!");
 
 });
 console.log("VIVERO backend!!");
