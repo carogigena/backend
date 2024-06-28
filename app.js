@@ -14,7 +14,7 @@ app.get("/", (req, res)=> {
 
 app.get("/productos", async (req,res) =>{
     const connection = 'AAA';
-    res.send(`VIVERO ${connection}`);
+    res.send("SSASA");
     //const result = connection.query("SELECT * FROM productos");
     //console.log(result)
 });
