@@ -1,15 +1,15 @@
 const express = require("express");
 const morgan = require('morgan');
-//const database = require("./db");
+const database = require("./db");
 
 const app = express();
 
 //Uso middleware
-//app.use(express.json());
-//app.use(morgan("dev"));
+app.use(express.json());
+app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
-    res.send("VIVERO APP 8 !! ");
+    res.send("VIVERO APP 9 !! ");
 
 });
 const PORT = process.env.PORT || 3000;
