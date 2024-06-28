@@ -1,14 +1,15 @@
 const mySql = require("mysql2");
 const dotenv = require("dotenv");
-/*dotenv.config()
+
+dotenv.config()
 
 
 const connection = mySql.createConnection(
     {
-        host: 'mysql-cgigena.alwaysdata.net', //process.env.host,
-        user: 'cgigena',// process.env.user,
-        password: '&CoronaFS2024', //process.env.password,
-        database: 'cgigena_vivero', //process.env.database,
+        host: process.env.host,
+        user: process.env.user,
+        password: process.env.password,
+        database: process.env.database,
 });  
 
 connection.connect((err) =>
@@ -58,7 +59,7 @@ connection.connect((err) =>
             console.log("Tabla asegurada");
         });
     });
-});
 });*/
+});
 
-//module.exports = connection;
+module.exports = connection;

@@ -9,12 +9,19 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
-    res.send("VIVERO APP 7 !!");
+    res.send("VIVERO APP 8 !! "+ process.env.PORT +" "+ process.env.HOST);
 
 });
-console.log("VIVERO backend!!");
+/*console.log("VIVERO backend!!");
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, ()=> console.log(`http://localhost:${PORT}`));
+const HOST = process.env.HOST|| 'http://localhost';
+app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));
+
+app.get("/productos", async (req,res) =>{
+    const connection = await database.connection();
+    const result = connection.query("SELECT * FROM productos");
+    console.log(result)
+});*/
 /*//Importamos el modulo express y lo instanciamos
 const express = require('express');
 const morgan = require('morgan');
