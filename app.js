@@ -10,6 +10,8 @@ app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
     res.send("VIVERO APP 9 !! ");
+    const PORT = process.env.PORT || 3000;
+    console.log(`http://localhost:${PORT}`);
 
 });
 const PORT = process.env.PORT || 3000;
