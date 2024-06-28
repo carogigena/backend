@@ -14,8 +14,9 @@ app.get("/", (req, res)=> {
 
 app.get("/productos", async (req,res) =>{
     const connection = await database.connection();
-    const result = connection.query("SELECT * FROM productos");
-    console.log(result)
+    res.send(`VIVERO ${connection}`);
+    //const result = connection.query("SELECT * FROM productos");
+    //console.log(result)
 });
 
 const PORT = process.env.PORT || 3000;
