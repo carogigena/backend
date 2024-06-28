@@ -1,13 +1,5 @@
-const express = require("express");
-const morgan = require('morgan');
-
-const app = express();
-app.get("/", (req, res)=> {
-    res.send("VIVERO APP 7 !!");
-
-});
-//const mySql = require("mysql2");
-//const dotenv = require("dotenv");
+const mySql = require("mysql2");
+const dotenv = require("dotenv");
 /*dotenv.config()
 
 
