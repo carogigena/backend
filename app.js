@@ -9,7 +9,7 @@ const app = express();
 //app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
-    res.send("VIVERO APP 5 !!");
+    res.send("VIVERO APP 6 !!");
 
 });
 console.log("VIVERO backend!!");
