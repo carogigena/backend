@@ -11,7 +11,8 @@ app.use(morgan("dev"));
 app.get("/", (req, res)=> {
     //res.send("VIVERO APP 9 !! ");
     const PORT = process.env.PORT || 3000;
-    res.send(`http://localhost:${PORT}`);
+    const HOST = process.env.HOST || 3000;
+    res.send(`${HOST}:${PORT}`);
 
 });
 const PORT = process.env.PORT || 3000;
