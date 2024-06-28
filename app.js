@@ -1,4 +1,14 @@
-//Importamos el modulo express y lo instanciamos
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res)=> {
+    res.send("VIVERO APP !!");
+
+});
+console.log("VIVERO backend!!");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, ()=> console.log(`http://localhost:${PORT}`));
+/*//Importamos el modulo express y lo instanciamos
 const express = require('express');
 const morgan = require('morgan');
 const database = require("./db")
@@ -29,3 +39,4 @@ app.get("/", (req, res)=> {
 
 // Start server
 app.listen(PORT, ()=>{console.log(`Servidor escuchando en el puerto ${PORT}`)});
+*/
