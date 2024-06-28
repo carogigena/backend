@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
-    res.send("VIVERO APP 8 !! "+ process.env.PORT +" "+ process.env.HOST);
+    res.send("VIVERO APP 8 !! ");
 
 });
 /*console.log("VIVERO backend!!");
