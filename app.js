@@ -12,7 +12,7 @@ app.get("/", (req, res)=> {
     res.send("VIVERO APP 10 !! ");
 });
 
-app.get("/productos", async (req,res) =>{
+app.get("/productos", (req,res) =>{
     const connection = 'AAA';
     res.send("SSASA");
     //const result = connection.query("SELECT * FROM productos");
