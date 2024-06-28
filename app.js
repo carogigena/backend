@@ -9,12 +9,12 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
-    res.send("VIVERO APP 11 !! ");
+    res.send("VIVERO APP 12 !! ");
 });
 
-app.get("/productos", (req,res) =>{
-    const connection = 'AAA';
-    res.send("SSASA");
+app.get("/productos", async (req,res) =>{
+    const connection = await database.connection();
+    res.send(`VIVERO ${connection}`);
     //const result = connection.query("SELECT * FROM productos");
     //console.log(result)
 });
