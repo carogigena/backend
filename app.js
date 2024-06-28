@@ -9,11 +9,11 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
-    res.send("VIVERO APP 9 !! ");
-    
-    res.send(`${HOST}:${PORT}`);
-
+    res.send("VIVERO APP 10 !! ");
 });
+
+
+
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || 'http://localhost';
 app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));

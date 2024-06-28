@@ -1,7 +1,7 @@
 const mySql = require("mysql2");
 const dotenv = require("dotenv");
 
-/*dotenv.config()
+dotenv.config()
 
 
 const connection = mySql.createConnection(
@@ -59,7 +59,7 @@ connection.connect((err) =>
             console.log("Tabla asegurada");
         });
     });
-});
 });*/
+});
 
-//module.exports = connection;
+module.exports = connection;
