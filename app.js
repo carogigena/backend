@@ -15,11 +15,14 @@ app.get('/', (req,res) =>
     res.send('HOLA DESDE EL PUERTO LOCALHOST:3000');
 });
 
-app.listen(port , () => 
+/*app.listen(port , () => 
 {
     console.log(`Servidor ejecutandose en el puert ${port}`)
 });
-
+*/
+const PORT = process.env.PORT || 3000;
+const HOST = 'jcgigena.alwaysdata.net';// process.env.HOST || 'http://localhost';
+app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));
 
 
 //Uso middleware
