@@ -22,6 +22,7 @@ app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));
 
 app.get('/', (req,res) => 
     {
+        console.log('PRUEBA')
         res.send(`HOLA DESDE EL HOST ${HOST}, PUERTO:${PORT}`);
     });
 
