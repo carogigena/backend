@@ -26,7 +26,7 @@ app.get('/', (req,res) =>
     });
 
     app.get("/productos", async (req,res) =>{
-        //res.send(`VIVERO `);
+        res.send(`VIVERO `);
         const conn = await database.getConnection();
         //res.send(`VIVERO ${conn}`);
         if (!conn || !conn.connection || conn.connection._closing) {
