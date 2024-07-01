@@ -4,7 +4,10 @@ const connection = mySql.createConnection(
         host : 'localhost',
         user: 'root',
         password: 'MICONTRASEÑAAA',
-        database: 'usuarios_db'
+        database: 'usuarios_db',
+        waitForConnections: true,
+        connectionLimit: 10,
+        queueLimit: 0
     });
 
 
