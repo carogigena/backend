@@ -10,10 +10,6 @@ app.use(express.json());
 
 app.use('/usuarios',usuariosRouter);
 
-app.get('/', (req,res) => 
-{
-    res.send('HOLA DESDE EL PUERTO LOCALHOST:3000');
-});
 
 /*app.listen(port , () => 
 {
@@ -24,7 +20,12 @@ const PORT = process.env.PORT || 3000;
 const HOST = 'jcgigena.alwaysdata.net';// process.env.HOST || 'http://localhost';
 app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));
 
+app.get('/', (req,res) => 
+    {
+        res.send(`HOLA DESDE EL PUERTO ${HOST}:${PORT}`);
+    });
 
+    
 //Uso middleware
 /*app.use(express.json());
 app.use(morgan("dev"));
