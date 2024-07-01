@@ -26,8 +26,9 @@ app.get('/', (req,res) =>
     });
 
     app.get("/productos", async (req,res) =>{
+        //res.send(`VIVERO `);
         const conn = await database.getConnection();
-        //res.send(`VIVERO ${connection}`);
+        //res.send(`VIVERO ${conn}`);
         if (!conn || !conn.connection || conn.connection._closing) {
             winston.info('Connection is in a closed state, getting a new connection');
             await conn.destroy(); // Toast that guy right now
