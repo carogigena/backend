@@ -25,7 +25,13 @@ app.get('/', (req,res) =>
         res.send(`HOLA DESDE EL PUERTO ${HOST}:${PORT}`);
     });
 
-    
+    app.get("/productos", async (req,res) =>{
+        const connection = await database.connection();
+        //res.send(`VIVERO ${connection}`);
+        const result = connection.query("SELECT * FROM productos");
+        console.log('result');
+    });
+        
 //Uso middleware
 /*app.use(express.json());
 app.use(morgan("dev"));
