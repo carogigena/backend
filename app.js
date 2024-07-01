@@ -1,11 +1,29 @@
 const express = require("express");
 const morgan = require('morgan');
-const database = require("./db");
+//const database = require("./db");
 
 const app = express();
 
-//Uso middleware
+const usuariosRouter = require('./routes/usuarios');
+
 app.use(express.json());
+
+app.use('/usuarios',usuariosRouter);
+
+app.get('/', (req,res) => 
+{
+    res.send('HOLA DESDE EL PUERTO LOCALHOST:3000');
+});
+
+app.listen(port , () => 
+{
+    console.log(`Servidor ejecutandose en el puert ${port}`)
+});
+
+
+
+//Uso middleware
+/*app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/", (req, res)=> {
@@ -13,17 +31,17 @@ app.get("/", (req, res)=> {
 });
 
 app.get("/productos", async (req,res) =>{
-    const connection = await database.connection();
-    res.send(`VIVERO ${connection}`);
-    //const result = connection.query("SELECT * FROM productos");
-    //console.log(result)
+    //const connection = await database.connection();
+    //res.send(`VIVERO ${connection}`);
+    const result = connection.query("SELECT * FROM productos");
+    console.log('Productos');
 });
 
 const PORT = process.env.PORT || 3000;
-const HOST = process.env.HOST || 'http://localhost';
+const HOST = 'mysql-jcgigena.alwaysdata.net';// process.env.HOST || 'http://localhost';
 app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));
 
-/*console.log("VIVERO backend!!");
+console.log("VIVERO backend!!");
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST|| 'http://localhost';
 app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));
