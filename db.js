@@ -63,4 +63,10 @@ connection.connect((err) =>
 });*/
 });
 
+connection.query('SELECT * FROM productos', (err, result, fields)=>{
+    if (err){
+        return console.log(err);
+    }
+    return console.log(result);
+})
 module.exports = connection;

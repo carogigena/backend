@@ -25,19 +25,6 @@ app.get('/', (req,res) =>
         res.send(`HOLA DESDE EL HOST ${HOST}, PUERTO:${PORT}`);
     });
 
-    app.get("/productos", async (req,res) =>{
-        
-        const conn = await database.getConnection();
-        res.send(`VIVERO ${conn}`);
-        if (!conn || !conn.connection || conn.connection._closing) {
-            winston.info('Connection is in a closed state, getting a new connection');
-            await conn.destroy(); // Toast that guy right now
-            sleep.sleep(1); // Wait for the connection to be destroyed and try to get a new one, you must wait! otherwise u get the same connection
-            conn = await connPool.connection.getConnection(); // get a new one
-          }
-        const result = connection.query("SELECT * FROM productos");
-        console.log(result);
-    });
         
 //Uso middleware
 /*app.use(express.json());
