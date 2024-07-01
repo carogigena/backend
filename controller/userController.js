@@ -17,7 +17,7 @@ const ObtenerTodosLosUsuarios = (req,res) => {
 const ObtenerUsuarioPorId = (req,res) => 
 {
     const {id} = req.params;
-    const sql = 'SELECT * FROM usuarios WHERE id = ?'
+    const sql = 'SELECT * FROM usuarios WHERE idusuario = ?'
 
    db.query(sql, [id] ,(err, result) => 
    {
