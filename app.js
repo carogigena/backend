@@ -22,7 +22,7 @@ app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));
 
 app.get('/', (req,res) => 
     {
-        res.send(`HOLA DESDE EL PUERTO ${HOST}:${PORT}`);
+        res.send(`HOLA DESDE EL HOST ${HOST}, PUERTO:${PORT}`);
     });
 
     app.get("/productos", async (req,res) =>{
