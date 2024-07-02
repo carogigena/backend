@@ -3,11 +3,11 @@ const routerProduc = express.Router();
 const userController = require('../controller/producController');
 
 
-routerProduc.get('/', userController.ObtenerTodosLosUsuarios);
-routerProduc.get('/:id',userController.ObtenerUsuarioPorId);
-routerProduc.post('/',userController.crearUsuario);
-routerProduc.put('/:id',userController.ActualizarUsuario);
-routerProduc.delete('/:id',userController.BorrarUsuario);
+routerProduc.get('/', userController.ObtenerTodosLosProductos);
+routerProduc.get('/:id',userController.ObtenerProductoPorId);
+routerProduc.post('/',userController.crearProducto);
+routerProduc.put('/:id',userController.ActualizarProducto);
+routerProduc.delete('/:id',userController.BorrarProducto);
 
 
 
