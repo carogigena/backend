@@ -1,13 +1,13 @@
 const express = require('express');
 const routerProduc = express.Router();
-const userController = require('../controller/producController');
+const productoController = require('../controller/producController');
 
 
-routerProduc.get('/', userController.ObtenerTodosLosProductos);
-routerProduc.get('/:id',userController.ObtenerProductoPorId);
-routerProduc.post('/',userController.crearProducto);
-routerProduc.put('/:id',userController.ActualizarProducto);
-routerProduc.delete('/:id',userController.BorrarProducto);
+routerProduc.get('/', productoController.ObtenerTodosLosProductos);
+routerProduc.get('/:id',productoController.ObtenerProductoPorId);
+routerProduc.post('/',productoController.crearProducto);
+routerProduc.put('/:id',productoController.ActualizarProducto);
+routerProduc.delete('/:id',productoController.BorrarProducto);
 
 
 

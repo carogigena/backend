@@ -2,8 +2,8 @@ const db = require('../db/db');
 
 
 
-const ObtenerTodosLosProductos = (req,res) => {
-    const sql = 'SELECT * FROM productos';
+const ObtenerTodosLosMensajes = (req,res) => {
+    const sql = 'SELECT * FROM mensajes';
     db.query(sql, (err,results) => 
     {
         if(err)
@@ -13,7 +13,7 @@ const ObtenerTodosLosProductos = (req,res) => {
     });
 }
 
-const ObtenerProductoPorId = (req,res) => 
+/*const ObtenerProductoPorId = (req,res) => 
 {
     const {id} = req.params;
     const sql = 'SELECT * FROM productos WHERE idproducto = ?'
@@ -99,13 +99,8 @@ const ObtenerProductosporTipo = (req,res) =>{
         res.json(results);
     })
 }
-
+*/
 module.exports = 
 {
-    ObtenerTodosLosProductos,
-    ObtenerProductoPorId,
-    crearProducto,
-    ActualizarProducto,
-    BorrarProducto,
-    ObtenerProductosporTipo
+    ObtenerTodosLosMensajes
 }
