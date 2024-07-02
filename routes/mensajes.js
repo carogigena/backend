@@ -5,7 +5,7 @@ const mensajesController = require('../controller/mensajesController');
 
 routerMensajes.get('/', mensajesController.ObtenerTodosLosMensajes);
 //routerMensajes.get('/:id',mensajesController.ObtenerProductoPorId);
-//routerMensajes.post('/',mensajesController.crearMensaje);
+routerMensajes.post('/',mensajesController.crearMensaje);
 //routerMensajes.put('/:id',mensajesController.ActualizarMensaje);
 //routerMensajes.delete('/:id',mensajesController.BorrarMensaje);
 

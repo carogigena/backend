@@ -13,6 +13,26 @@ const ObtenerTodosLosMensajes = (req,res) => {
     });
 }
 
+const crearMensaje = (req,res) => 
+    {
+        const {mensaje,fecha,asunto,usuarios_idusuarios} = req.body;
+    
+        const sql = 'INSERT INTO productos (mensaje,fecha,asunto,usuarios_idusuarios) VALUES (?,?,?)';
+    
+        db.query(sql,[mensaje,fecha,asunto,usuarios_idusuarios], (err,result) => 
+        {
+            if(err) throw err;
+    
+            res.json(
+                {
+                    mensaje : "mesaje Creado con EXITO",
+                    idmensaje : result.insertId
+                });
+    
+        });
+    
+    
+    }
 /*const ObtenerProductoPorId = (req,res) => 
 {
     const {id} = req.params;
@@ -27,26 +47,7 @@ const ObtenerTodosLosMensajes = (req,res) => {
 
 }
 
-const crearProducto = (req,res) => 
-{
-    const {descripcion,nombre,precio,tipoproducto_idtipoproducto} = req.body;
 
-    const sql = 'INSERT INTO productos (nombre,descripcion,precio,tipoproducto_idtipoproducto) VALUES (?,?,?)';
-
-    db.query(sql,[nombre,descripcion,precio,tipoproducto_idtipoproducto], (err,result) => 
-    {
-        if(err) throw err;
-
-        res.json(
-            {
-                mensaje : "Producto Creado con EXITO",
-                idProducto : result.insertId
-            });
-
-    });
-
-
-}
 
 const ActualizarProducto = (req,res) => 
 {
@@ -102,5 +103,6 @@ const ObtenerProductosporTipo = (req,res) =>{
 */
 module.exports = 
 {
-    ObtenerTodosLosMensajes
+    ObtenerTodosLosMensajes,
+    crearMensaje
 }
