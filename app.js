@@ -118,7 +118,10 @@ app.delete('/productos/:id', async (req, res) => {
         res.send(500).send('Internal server error')
     }
 });
-
+app.get('/', (req,res) => 
+    {
+        res.send(`HOLA DESDE EL HOST ${HOST}, PUERTO:${PORT}`);
+    });
 // Start the server
 app.listen(puerto, () => {
     console.log('Server started on port 3000');
