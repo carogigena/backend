@@ -32,7 +32,7 @@ const crearUsuario = (req,res) =>
 {
     const {nombre,apellido,mail} = req.body;
 
-    const sql = 'INSERT INTO usuarios (nombre,apellido,mail) VALUES (?,?,?)';
+    const sql = 'INSERT INTO usuarios (nombres,apellido,email) VALUES (?,?,?)';
 
     db.query(sql,[nombre,apellido,mail], (err,result) => 
     {
@@ -54,7 +54,7 @@ const ActualizarUsuario = (req,res) =>
     const {id} = req.params;
     const {nombre,apellido,mail} = req.body;
 
-    const sql = 'UPDATE usuarios SET nombre = ?, apellido = ? , mail = ? WHERE id = ?'
+    const sql = 'UPDATE usuarios SET nombres = ?, apellido = ? , email = ? WHERE id = ?'
 
     db.query(sql, [nombre,apellido,mail,id], (err,result) => 
     {
