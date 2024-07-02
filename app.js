@@ -5,11 +5,12 @@ const database = require("./db/db");
 const app = express();
 
 const usuariosRouter = require('./routes/usuarios');
+const productosRouter = require('./routes/productos');
 
 app.use(express.json());
 
 app.use('/usuarios',usuariosRouter);
-
+app.use('/productos',productosRouter);
 
 /*app.listen(port , () => 
 {
