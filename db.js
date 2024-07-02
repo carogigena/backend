@@ -23,8 +23,8 @@ connection.connect((err) =>
         }
     
     console.log("Conectado a la base de datos");
-    //const result = connection.query("SELECT nombres FROM usuarios");
-    //console.log(result);
+    const result = connection.query("SELECT nombres FROM usuarios");
+    console.log(result);
     
     /*connection.query("CREATE DATABASE IF NOT EXISTS cgigena_vivero", (err, result) =>
     {
