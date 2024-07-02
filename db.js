@@ -10,7 +10,8 @@ const connection = mySql.createConnection(
         user: 'jcgigena',//process.env.user,
         password: '&Grupo28',//process.env.password,
         database: 'jcgigena_vivero',//process.env.database,
-        connectionLimit:10
+        connectionLimit:10,
+        connectTimeout : 10000
 });  
 
 connection.connect((err) =>
