@@ -1,34 +1,4 @@
-
-import { createPool } from 'mysql2/promise';
-
-// Create a connection pool
-const pool = createPool({
-    host: 'mysql-jcgigena.alwaysdata.net',//process.env.host,
-        user: 'jcgigena',//process.env.user,
-        password: '&Grupo28',//process.env.password,
-        database: 'jcgigena_vivero',//process.env.database,
-        connectionLimit:10
-    /*host: process.env.MYSQL_ADDON_HOST,
-    user: process.env.MYSQL_ADDON_USER,
-    password: process.env.MYSQL_ADDON_PASSWORD,
-    database: process.env.MYSQL_ADDON_DB,
-    connectionLimit: 5 */// Adjust the connection limit as per your requirements
-});
-
-// test connection
-pool.getConnection()
-    .then(connection => {
-        console.log('Connected to the database');
-        connection.release();
-    })
-    .catch(error => {
-        console.log('Error connecting to the database', error);
-    });
-
-
-export default pool;
-
-/*const mySql = require("mysql2");
+const mySql = require("mysql2");
 const dotenv = require("dotenv");
 
 dotenv.config()
@@ -91,9 +61,8 @@ connection.connect((err) =>
             console.log("Tabla asegurada");
         });
     });
-});
+});*/
 });
 
 
 module.exports = connection;
-*/
