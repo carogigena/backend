@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const config = require('../config/config');
-
+const db = require('../db/db');
 
 
 // Función para registrar un nuevo usuario
