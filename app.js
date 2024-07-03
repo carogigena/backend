@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require('morgan');
 const database = require("./db/db");
+const authRoutes = require("./routes/authRoutes.js");
 
 const app = express();
 
@@ -15,6 +16,8 @@ app.use('/usuarios',usuariosRouter);
 app.use('/productos',productosRouter);
 app.use('/tipoproductos',tipoproductosRouter);
 app.use('/mensajes',mensajesRouter);
+
+app.use('./auth', authRoutes)
 
 /*app.listen(port , () => 
 {
