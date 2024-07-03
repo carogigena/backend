@@ -9,7 +9,6 @@ const usuariosRouter = require('./routes/usuarios');
 const productosRouter = require('./routes/productos');
 const tipoproductosRouter = require('./routes/tipoproductos');
 const mensajesRouter = require('./routes/mensajes');
-const authRoutes = require("./routes/authRoutes");
 
 app.use(express.json());
 
@@ -18,7 +17,7 @@ app.use('/productos',productosRouter);
 app.use('/tipoproductos',tipoproductosRouter);
 app.use('/mensajes',mensajesRouter);
 
-app.use('/authRoutes', authRoutes);
+
 
 /*app.listen(port , () => 
 {
