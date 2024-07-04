@@ -1,20 +1,19 @@
 const express = require("express");
-const morgan = require('morgan');
-const database = require("./db/db");
+//const morgan = require('morgan');
+//const database = require("./db/db");
 const cors = require('cors');
-
 
 
 const app = express();
 
-const usuariosRouter = require('./routes/usuarios');
+//const usuariosRouter = require('./routes/usuarios');
 const productosRouter = require('./routes/productos');
 const tipoproductosRouter = require('./routes/tipoproductos');
 const mensajesRouter = require('./routes/mensajes');
 
 app.use(express.json());
 app.use(cors());
-app.use('/usuarios',usuariosRouter);
+//app.use('/usuarios',usuariosRouter);
 app.use('/productos',productosRouter);
 app.use('/tipoproductos',tipoproductosRouter);
 app.use('/mensajes',mensajesRouter);
