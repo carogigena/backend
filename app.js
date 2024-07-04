@@ -1,6 +1,6 @@
 const express = require("express");
-//const morgan = require('morgan');
-//const database = require("./db/db");
+const morgan = require('morgan');
+const database = require("./db/db");
 const cors = require('cors');
 
 
