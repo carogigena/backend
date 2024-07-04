@@ -4,6 +4,7 @@ const database = require("./db/db");
 const cors = require('cors');
 
 
+
 const app = express();
 
 const usuariosRouter = require('./routes/usuarios');
@@ -17,6 +18,8 @@ app.use('/usuarios',usuariosRouter);
 app.use('/productos',productosRouter);
 app.use('/tipoproductos',tipoproductosRouter);
 app.use('/mensajes',mensajesRouter);
+
+
 
 /*app.listen(port , () => 
 {
