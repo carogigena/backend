@@ -29,11 +29,11 @@ const ObtenerProductoPorId = (req,res) =>
 
 const crearProducto = (req,res) => 
 {
-    const {descripcion,nombre,precio,tipoproducto_idtipoproducto} = req.body;
+    const {descripcion,nombre,precio,stock,tipoproducto_idtipoproducto,link_img} = req.body;
 
-    const sql = 'INSERT INTO productos (nombre,descripcion,precio,tipoproducto_idtipoproducto) VALUES (?,?,?)';
+    const sql = 'INSERT INTO productos (nombre,descripcion,precio,stock,tipoproducto_idtipoproducto,link_img) VALUES (?,?,?)';
 
-    db.query(sql,[nombre,descripcion,precio,tipoproducto_idtipoproducto], (err,result) => 
+    db.query(sql,[nombre,descripcion,precio,stock,tipoproducto_idtipoproducto,link_img], (err,result) => 
     {
         if(err) throw err;
 
