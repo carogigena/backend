@@ -29,11 +29,12 @@ const ObtenerProductoPorId = (req,res) =>
 
 const crearProducto = (req,res) => 
 {
-    const {descripcion,nombre,precio,tipoproducto_idtipoproducto} = req.body;
 
-    const sql = 'INSERT INTO productos (nombre,descripcion,precio,tipoproducto_idtipoproducto) VALUES (?,?,?)';
+    const {descripcion,nombre,precio,stock,link_img,tipoproducto_idtipoproducto} = req.body;
+    
+    const sql = 'INSERT INTO productos (nombre,descripcion,precio,stock,link_img,tipoproducto_idtipoproducto) VALUES (?,?,?,?,?,?)';
 
-    db.query(sql,[nombre,descripcion,precio,tipoproducto_idtipoproducto], (err,result) => 
+    db.query(sql,[nombre,descripcion,precio,stock,link_img,tipoproducto_idtipoproducto], (err,result) => 
     {
         if(err) throw err;
 
@@ -50,13 +51,12 @@ const crearProducto = (req,res) =>
 
 const ActualizarProducto = (req,res) => 
 {
-    console.log(req.params);
-    const {id} = req.params;
-    const {nombre,descripcion,precio,tipoproducto_idtipoproducto} = req.body;
+    const {idproducto} = req.params;
+    const {descripcion,nombre,precio,stock,link_img,tipoproducto_idtipoproducto} = req.body;
 
-    const sql = 'UPDATE productos SET nombre = ?, descripcion = ? , precio = ? , tipoproducto_idtipoproducto =? WHERE id = ?'
+    const sql = 'UPDATE productos SET nombre = ?, descripcion = ? , precio = ? , stock=? , link_img=? , tipoproducto_idtipoproducto =? WHERE idproducto = ?'
 
-    db.query(sql, [nombre,descripcion,precio,tipoproducto_idtipoproducto,id], (err,result) => 
+    db.query(sql, [nombre,descripcion,precio,stock,link_img,tipoproducto_idtipoproducto,idproducto], (err,result) => 
     {
         if(err) throw err;
 
@@ -72,7 +72,7 @@ const BorrarProducto = (req,res) =>
 {
     const {id} = req.params;
 
-    const sql = 'DELETE FROM Productos WHERE id = ?';
+    const sql = 'DELETE FROM Productos WHERE idproducto = ?';
 
     db.query(sql,[id],(err,result) => 
     {
