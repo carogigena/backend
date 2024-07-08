@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors({origin:'http://127.0.0.1:5501'}));
 
 app.use((req, res, next)=>{
-    res.append('Access-Control-Allow-Origin',['*']);
+    res.append('Access-Control-Allow-Origin',['http://127.0.0.1:5501']);
     res.append('Access-Control-Allow-Methods','GET, PUT, POST, DELETE');
     res.append('Access-Control-Allow-Headers','Content-Type');
     next();
