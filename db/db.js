@@ -6,7 +6,7 @@ const connection = mySql.createConnection(
         password: '&Grupo28',//process.env.password,
         database: 'jcgigena_vivero',//process.env.database,
         connectionLimit:10,
-        connectTimeout : 10000,
+        connectTimeout : 100000,
         waitForConnections: true,
         queueLimit: 0
     });
