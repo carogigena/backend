@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require('morgan');
 const database = require("./db/db");
+const cors = require('cors');
 
 
 const app = express();
@@ -11,7 +12,7 @@ const tipoproductosRouter = require('./routes/tipoproductos');
 const mensajesRouter = require('./routes/mensajes');
 
 app.use(express.json());
-
+app.use(cors());
 app.use('/usuarios',usuariosRouter);
 app.use('/productos',productosRouter);
 app.use('/tipoproductos',tipoproductosRouter);
@@ -26,6 +27,7 @@ app.use('/mensajes',mensajesRouter);
 */
 const PORT = process.env.PORT || 3000;
 const HOST = 'jcgigena.alwaysdata.net';// process.env.HOST || 'http://localhost';
+
 app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));
 
 app.get('/', (req,res) => 
