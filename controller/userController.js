@@ -1,9 +1,9 @@
 const db = require('../db/db');
 const bcrypt = require('bcryptjs');
-const config = require('../config/config');
-const jwt = require('jsonwebtoken');
 
-const ObtenerTodosLosUsuarios = (req,res) => {
+
+// Función para obtener todos los usuarios
+const obtenerTodosLosUsuarios = (req,res) => {
     const sql = 'SELECT * FROM usuarios';
 
     db.query(sql, (err,results) => 
@@ -15,7 +15,8 @@ const ObtenerTodosLosUsuarios = (req,res) => {
     });
 }
 
-const ObtenerUsuarioPorId = (req,res) => 
+// Función para obtner un usuario por ID
+const obtenerUsuarioPorId = (req,res) => 
 {
     const {id} = req.params;
     const sql = 'SELECT * FROM usuarios WHERE idusuario = ?'
@@ -29,59 +30,57 @@ const ObtenerUsuarioPorId = (req,res) =>
 
 }
 
+// Función para crear un usuario
 const crearUsuario = (req,res) => 
 {
-    const {nombre,apellido,mail,usuario,password} = req.body;
+    const {nombres,apellidos,dni,provincias_idprovincias,tipousuario_idtipousuario, email,usuario,password,genero_idgenero} = req.body;
     const hashedPassword = bcrypt.hashSync(password, 8); 
 
-    const sql = 'INSERT INTO usuarios (nombres,apellido,email, usuario, password) VALUES (?,?,?,?,?)';
+    const sql = 'INSERT INTO usuarios (nombres,apellidos,dni,provincias_idprovincias,tipousuario_idtipousuario,email,usuario,password,genero_idgenero) VALUES (?,?,?,?,?,?,?,?,?)'
 
-    db.query(sql,[nombre,apellido,mail,usuario,{password:hashedPassword}], (err,result) => 
+    db.query(sql, [nombres,apellidos,dni,provincias_idprovincias,tipousuario_idtipousuario, email,usuario,hashedPassword,genero_idgenero], (err,result) => 
     {
-        if(err) throw err;
+         if(err) throw err;
 
         res.json(
             {
                 mensaje : "Usuario Creado con EXITO",
                 idUsuario : result.insertId
             });
-
-    });
- // Genera un token JWT para el nuevo usuario
-    const token = jwt.sign({ id: idUsuario.id }, config.secretKey, { expiresIn: config.tokenExpiresIn });
-     // Envía el token como respuesta al cliente
-    res.status(201).send({ auth: true, token }); 
-
+  
+}); 
+    
 }
 
 
 
 // Función para iniciar sesión de un usuario
- const login = (req, res) => {
-    const { usuario, password } = req.body; 
-    
-    const user = users.find(u => u.usuario === usuario); 
-    if (!user) return res.status(404).send('Usuario no encontrado'); 
-    
-    const passwordIsValid = bcrypt.compareSync(password, usuario.password); 
-    if (!passwordIsValid) return res.status(401).send({ auth: false, token: null }); 
-    
-    const token = jwt.sign({ id: user.id }, config.secretKey, { expiresIn: config.tokenExpiresIn }); 
-    res.status(200).send({ auth: true, token }); 
- };
- 
+    const login =(req, res) =>{
+        
+        const {usuario, password} = req.body;
+        const sql = 'SELECT * FROM usuarios WHERE usuario = ?' 
+
+        db.query(sql, [usuario], (err, result) =>{
+           
+        if(!result || result.length == 0) return res.status(400).send('Usuario no encontrado');
+
+        const comparePassword = bcrypt.compareSync(password, result[0].password);
+        if(!comparePassword) return res.status(401).send({auth:false});
+            
+        res.status(200).send({ mensaje : "Usuario logueado con EXITO"});
+        }
+        )};
 
 
-
-
-const ActualizarUsuario = (req,res) => 
+// Función para modificar datos de un usuario
+const actualizarUsuario = (req,res) => 
 {
     const {id} = req.params;
-    const {nombre,apellido,mail} = req.body;
+    const {nombres,apellidos, email,usuario,} = req.body;
+   
+    const sql = 'UPDATE usuarios SET nombres = ?, apellidos = ?, email = ?, usuario = ? WHERE idusuario  = ?'
 
-    const sql = 'UPDATE usuarios SET nombres = ?, apellido = ? , email = ? WHERE id = ?'
-
-    db.query(sql, [nombre,apellido,mail,id], (err,result) => 
+    db.query(sql, [nombres,apellidos, email, usuario, id], (err,result) => 
     {
         if(err) throw err;
 
@@ -92,12 +91,12 @@ const ActualizarUsuario = (req,res) =>
 }
 
 
-
-const BorrarUsuario = (req,res) => 
+// Función para borrar un usuario
+const borrarUsuario = (req,res) => 
 {
     const {id} = req.params;
 
-    const sql = 'DELETE FROM usuarios WHERE id = ?';
+    const sql = 'DELETE FROM usuarios WHERE idusuario = ?';
 
     db.query(sql,[id],(err,result) => 
     {
@@ -114,10 +113,11 @@ const BorrarUsuario = (req,res) =>
 
 module.exports = 
 {
-    ObtenerTodosLosUsuarios,
-    ObtenerUsuarioPorId,
+    obtenerTodosLosUsuarios,
+    obtenerUsuarioPorId,
     crearUsuario,
-    ActualizarUsuario,
-    BorrarUsuario, 
+    actualizarUsuario,
+    borrarUsuario,
     login
-}
+};
+

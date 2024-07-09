@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controller/userController');
-const authMiddleware = require('../middleware/authMiddleware'); 
 
-router.get('/', userController.ObtenerTodosLosUsuarios);
-router.get('/:id',userController.ObtenerUsuarioPorId);
+
+router.get('/', userController.obtenerTodosLosUsuarios);
+router.get('/:id',userController.obtenerUsuarioPorId);
 router.post('/',userController.crearUsuario);
-router.put('/:id',userController.ActualizarUsuario);
-router.delete('/:id',userController.BorrarUsuario);
+router.put('/:id',userController.actualizarUsuario);
+router.delete('/:id',userController.borrarUsuario);
 // Ruta para iniciar sesión de un usuario
 router.post('/login', userController.login);
 
