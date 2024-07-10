@@ -104,13 +104,13 @@ async function deleteProducto(id) {
             method: 'DELETE',
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/json',
+                //'Content-Type': 'application/json',
                 'Access-Control-Allow-Headers': '*',
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Methods': '*'
             },
-        });
-         //   .then(() => listaProductos());
+        })
+        .then(() => listaProductos());
     }
 }
 
