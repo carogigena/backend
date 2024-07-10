@@ -10,7 +10,7 @@ const apiUrl ='http://jcgigena.alwaysdata.net';// 'http://localhost:3000';//'htt
 //Productos
 
 document.getElementById('produc-form').addEventListener('submit', (event) => {
-    //event.preventDefault();
+    event.preventDefault();
     addProducto();
 });
 
@@ -101,7 +101,7 @@ async function editProducto(id) {
 async function deleteProducto(id) {
     if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
         console.log(`${apiUrl}/productos/${id}`);
-         await fetch(`${apiUrl}/productos/${id}`, {
+       /*  await fetch(`${apiUrl}/productos/${id}`, {
             method: 'DELETE',
             mode: 'cors',
             headers: {
@@ -111,7 +111,7 @@ async function deleteProducto(id) {
             'Access-Control-Allow-Methods': 'DELETE, GET, OPTIONS, POST,PUT'
             },
         })
-        .then(() => listaProductos());
+        .then(() => listaProductos());*/
     }
 }
 
