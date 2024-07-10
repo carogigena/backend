@@ -105,9 +105,9 @@ async function deleteProducto(id) {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+                'Access-Control-Allow-Headers': '*',
                 'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT,DELETE'
+                'Access-Control-Allow-Methods': '*'
             },
         });
          //   .then(() => listaProductos());
