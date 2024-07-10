@@ -98,7 +98,7 @@ async function editProducto(id) {
 }
 
 
-async function deleteProducto(id) {
+function deleteProducto(id) {
     if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
          fetch(`${apiUrl}/productos/${id}`, {
             method: 'DELETE',
