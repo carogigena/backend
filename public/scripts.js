@@ -111,7 +111,6 @@ async function deleteProducto(id) {
             'Access-Control-Allow-Methods': 'DELETE, GET, OPTIONS, POST,PUT'
             },
         });
-       //.then(() => listaProductos());
     }
 }
 
