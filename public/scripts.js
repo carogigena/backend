@@ -107,7 +107,7 @@ async function deleteProducto(id) {
                 'Content-Type': 'application/json',
             'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT,DELETE'
+            'Access-Control-Allow-Methods': 'DELETE, HEAD, GET, OPTIONS, POST,PUT'
             },
             body: null
         })
