@@ -103,6 +103,7 @@ function deleteProducto(id) {
         //console.log(`${apiUrl}/productos/${id}`);
        fetch(`${apiUrl}/productos/${id}`, {
             method: 'DELETE',
+            credentials: 'include',
             mode: 'cors',
             headers: {
             'Content-Type': 'application/json',

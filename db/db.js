@@ -8,7 +8,7 @@ const connection = mySql.createConnection(
         connectionLimit:10,
         connectTimeout : 10000,
         waitForConnections: true,
-        queueLimit: 2
+        queueLimit: 0
     });
 
 
