@@ -109,8 +109,8 @@ async function deleteProducto(id) {
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT,DELETE'
             },
-        })
-            .then(() => listaProductos());
+        });
+         //   .then(() => listaProductos());
     }
 }
 
