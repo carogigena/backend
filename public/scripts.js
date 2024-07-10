@@ -10,7 +10,7 @@ const apiUrl ='http://jcgigena.alwaysdata.net';// 'http://localhost:3000';//'htt
 //Productos
 
 document.getElementById('produc-form').addEventListener('submit', (event) => {
-    event.preventDefault();
+    //event.preventDefault();
     addProducto();
 });
 
@@ -108,7 +108,7 @@ async function deleteProducto(id) {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'DELETE, HEAD, GET, OPTIONS, POST,PUT'
+            'Access-Control-Allow-Methods': 'DELETE, GET, OPTIONS, POST,PUT'
             },
         })
         .then(() => listaProductos());
