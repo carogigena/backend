@@ -13,7 +13,7 @@ const tipoproductosRouter = require('./routes/tipoproductos');
 const mensajesRouter = require('./routes/mensajes');
 
 app.use(express.static('public'));
-app.use(express.json());//5501
+app.use(express.json());
 app.use(cors({origin:'*',
     methods: ["GET", "POST", "PUT", "DELETE"]
     }
