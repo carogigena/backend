@@ -98,10 +98,10 @@ async function editProducto(id) {
 }
 
 
-async function deleteProducto(id) {
+function deleteProducto(id) {
     if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
         //console.log(`${apiUrl}/productos/${id}`);
-       await fetch(`${apiUrl}/productos/${id}`, {
+       fetch(`${apiUrl}/productos/${id}`, {
             method: 'DELETE',
             mode: 'cors',
             headers: {
