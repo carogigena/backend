@@ -98,9 +98,9 @@ async function editProducto(id) {
 }
 
 
-function deleteProducto(id) {
+async function deleteProducto(id) {
     if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
-         fetch(`${apiUrl}/productos/${id}`, {
+         await fetch(`${apiUrl}/productos/${id}`, {
             method: 'DELETE',
             mode: 'cors',
             headers: {
@@ -109,7 +109,6 @@ function deleteProducto(id) {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'DELETE, HEAD, GET, OPTIONS, POST,PUT'
             },
-            body: null
         })
         .then(() => listaProductos());
     }
