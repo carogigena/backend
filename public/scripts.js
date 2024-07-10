@@ -103,8 +103,7 @@ async function deleteProducto(id) {
         //console.log(`${apiUrl}/productos/${id}`);
        await fetch(`${apiUrl}/productos/${id}`, {
             method: 'DELETE',
-            //credentials: 'include',
-            mode: 'no-cors',
+            mode: 'cors',
             headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
