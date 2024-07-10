@@ -70,8 +70,8 @@ async function addProducto() {
         })
 }
 
-function editProducto(id) {
-    fetch(`${apiUrl}/productos/${id}`)
+async function editProducto(id) {
+    await fetch(`${apiUrl}/productos/${id}`)
         .then(response => response.json())
         .then(producto => {
            const newName = prompt('Ingrese nuevo nombre:', producto[0].nombre) || producto.nombre;
@@ -80,7 +80,7 @@ function editProducto(id) {
             const newStock = prompt('Ingrese nuevo stock:', producto[0].stock) || producto.stock;
             const newImage = prompt('Ingrese nueva URL de la imagen:', producto[0].link_img) || producto.link_img;
 
-            fetch(`${apiUrl}/productos/${id}`, {
+             fetch(`${apiUrl}/productos/${id}`, {
                 method: 'PUT',
                 mode: 'cors',
                 headers: {
@@ -98,9 +98,9 @@ function editProducto(id) {
 }
 
 
-function deleteProducto(id) {
+async function deleteProducto(id) {
     if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
-        fetch(`${apiUrl}/productos/${id}`, {
+        await fetch(`${apiUrl}/productos/${id}`, {
             method: 'DELETE',
             mode: 'cors',
             headers: {
