@@ -104,8 +104,8 @@ async function deleteProducto(id) {
             method: 'DELETE',
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/json',
-            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'DELETE, HEAD, GET, OPTIONS, POST,PUT'
             },
