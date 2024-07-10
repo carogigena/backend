@@ -67,7 +67,7 @@ const BorrarProducto = (req,res) =>
 {
     const {id} = req.params;
    console.log(id);
-    const sql = 'DELETE FROM Productos WHERE idproducto = ?';
+    const sql = 'DELETE FROM productos WHERE idproducto = ?';
 
     db.query(sql,[id],(err,result) => 
     {
