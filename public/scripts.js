@@ -99,19 +99,19 @@ async function editProducto(id) {
 
 
 async function deleteProducto(id) {
-    if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
+    //if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
         await fetch(`${apiUrl}/productos/${id}`, {
             method: 'DELETE',
             mode: 'cors',
             headers: {
-                //'Content-Type': 'application/json',
-                'Access-Control-Allow-Headers': '*',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': '*'
+                'Content-Type': 'application/json',
+            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT,DELETE'
             },
         })
         .then(() => listaProductos());
-    }
+   // }
 }
 
 
