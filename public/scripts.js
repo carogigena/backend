@@ -12,7 +12,6 @@ const apiUrl ='http://jcgigena.alwaysdata.net';// 'http://localhost:3000';//'htt
 document.getElementById('produc-form').addEventListener('submit', (event) => {
     event.preventDefault();
     addProducto();
-    
 });
 
 
@@ -98,6 +97,7 @@ async function addProducto() {
     })
         .then(response => {
             console.log(response);
+            location.href='productos.html';
         })
 }
 
