@@ -5,7 +5,7 @@
 //const { response } = require("express");
 
 
-const apiUrl ='http://jcgigena.alwaysdata.net';// 'http://localhost:3000';//'http://jcgigena.alwaysdata.net';//`${HOST}:${PORT}`;//;
+const apiUrl ='https://jcgigena.alwaysdata.net';// 'http://localhost:3000';//'http://jcgigena.alwaysdata.net';//`${HOST}:${PORT}`;//;
 
 //Productos
 
