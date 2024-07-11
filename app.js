@@ -11,6 +11,7 @@ const usuariosRouter = require('./routes/usuarios');
 const productosRouter = require('./routes/productos');
 const tipoproductosRouter = require('./routes/tipoproductos');
 const mensajesRouter = require('./routes/mensajes');
+const datosRouter = require('./routes/datos');
 
 app.use(express.static('public'));
 app.use(express.json());
@@ -22,6 +23,7 @@ app.use('/usuarios',usuariosRouter);
 app.use('/productos',productosRouter);
 app.use('/tipoproductos',tipoproductosRouter);
 app.use('/mensajes',mensajesRouter);
+app.use('/datos',datosRouter);
 
 const PORT = process.env.PORT || 3000;
 const HOST = 'jcgigena.alwaysdata.net';// process.env.HOST || 'http://localhost';
