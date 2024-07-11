@@ -125,7 +125,7 @@ async function listaProvincias() {
             data.forEach(provincia => {
                 const option = document.createElement('option');
                 option.text = provincia.nombre;
-                option.value = provincia.idprovincias;
+                option.value = provincia.idprovincia;
                 provinciasList.appendChild(option);
             });
 
