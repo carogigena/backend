@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000';//'https://jcgigena.alwaysdata.net';
+const apiUrl = 'https://jcgigena.alwaysdata.net';
 
 document.getElementById('formularioregistro').addEventListener('submit', (event) => {
     event.preventDefault();
