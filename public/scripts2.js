@@ -1,4 +1,4 @@
-const apiUrl = 'https://jcgigena.alwaysdata.net';
+const apiUrl = 'http://localhost:3000';//'https://jcgigena.alwaysdata.net';
 
 document.getElementById('formularioregistro').addEventListener('submit', (event) => {
     event.preventDefault();
@@ -43,6 +43,7 @@ async function addUsuario() {
     const usuario = document.getElementById('usu-usuario').value;
     const password = document.getElementById('usu-password').value;
     const genero = document.getElementById('usu-genero').value;
+
     console.log(JSON.stringify({
         nombres: nombres, apellidos: apellidos, dni: numerodni, provincias_idprovincias: provincia,
         tipousuario_idtipousuario: tipodeusuario, email: email, usuario: usuario,  password: password, genero_idgenero: genero
@@ -112,4 +113,62 @@ function deleteUsuario(id) {
     }
 }
 
+//Provincias;
+async function listaProvincias() {
+    await fetch(`${apiUrl}/datos/provincias`, {
+        method: 'GET',
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const provinciasList = document.getElementById('usu-provincia');
+            data.forEach(provincia => {
+                const option = document.createElement('option');
+                option.text = provincia.nombre;
+                option.value = provincia.idprovincias;
+                provinciasList.appendChild(option);
+            });
 
+        });
+}
+listaProvincias();
+
+//Genero;
+async function listaGenero() {
+    await fetch(`${apiUrl}/datos/genero`, {
+        method: 'GET',
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const generoList = document.getElementById('usu-genero');
+            data.forEach(genero => {
+                const option = document.createElement('option');
+                option.text = genero.descripcion;
+                option.value = genero.idgenero;
+                generoList.appendChild(option);
+            });
+
+        });
+}
+listaGenero();
+
+//Genero;
+async function tipoUsuario() {
+    await fetch(`${apiUrl}/datos/tipousuario`, {
+        method: 'GET',
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const usuarioList = document.getElementById('usu-tipousuario');
+            data.forEach(tipousuario => {
+                const option = document.createElement('option');
+                option.text = tipousuario.tipousuario;
+                option.value = tipousuario.idtipousuario;
+                usuarioList.appendChild(option);
+            });
+
+        });
+}
+tipoUsuario();
