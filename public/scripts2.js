@@ -1,4 +1,4 @@
-const apiUrl = 'http://jcgigena.alwaysdata.net';
+const apiUrl = 'https://jcgigena.alwaysdata.net';
 
 document.getElementById('formularioregistro').addEventListener('submit', (event) => {
     event.preventDefault();
@@ -36,7 +36,7 @@ async function listaUsuarios() {
 async function addUsuario() {
     const nombres = document.getElementById('usu-nombres').value;
     const apellidos = document.getElementById('usu-apellidos').value;
-    const dni = document.getElementById('usu-dni').value;
+    const numerodni = document.getElementById('usu-dni').value;
     const provincia = document.getElementById('usu-provincia').value;
     const tipodeusuario = document.getElementById('usu-tipousuario').value;
     const email = document.getElementById('usu-email').value;
@@ -44,7 +44,7 @@ async function addUsuario() {
     const password = document.getElementById('usu-password').value;
     const genero = document.getElementById('usu-genero').value;
     console.log(JSON.stringify({
-        nombres: nombres, apellidos: apellidos, dni: dni, provincias_idprovincias: provincia,
+        nombres: nombres, apellidos: apellidos, dni: numerodni, provincias_idprovincias: provincia,
         tipousuario_idtipousuario: tipodeusuario, email: email, usuario: usuario,  password: password, genero_idgenero: genero
     }));
     await fetch(`${apiUrl}/usuarios`, {
@@ -57,7 +57,7 @@ async function addUsuario() {
             'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT'
         },
         body: JSON.stringify({
-        nombres: nombres, apellidos: apellidos, dni: dni, provincias_idprovincias: provincia,
+        nombres: nombres, apellidos: apellidos, dni: numerodni, provincias_idprovincias: provincia,
         tipousuario_idtipousuario: tipodeusuario, email: email, usuario: usuario, password: password, genero_idgenero: genero
         })
     })
