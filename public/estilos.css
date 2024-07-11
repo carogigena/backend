@@ -1,0 +1,50 @@
+body {
+  padding: 3%;
+  background-color: #f0b5b5;
+}
+
+
+.form-container {
+  display: flex;
+  flex-direction:column;;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:medium;
+  font-style: italic;
+  background: #d7a0b9; 
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  font-size: 48px;
+  padding: 1%;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  font-style: italic;
+  background: #7592a3;
+  width: 100%;
+  max-width: 330px;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

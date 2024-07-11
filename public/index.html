@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-    <title>Vivero Jade</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body >
-    <h1>Productos</h1>
-    <div id="app">
-        <form id="produc-form">
-            <input type="text" id="produc-nombre" placeholder="Nombre" required>
-            <input type="text" id="produc-descripcion" placeholder="Descripción" required>
-            <input type="number" id="produc-precio" placeholder="Precio" required>
-            <input type="number" id="produc-stock" placeholder="Stock" required>            
-            <select id="produc-tipo" placeholder="Tipo Producto">
-                <option value="" selected disabled>Tipo Producto</option>
-            </select>
-            <input type="url" id="produc-image" placeholder="Imagen URL" required>
-            <button type="submit">Agregar Producto</button>
-        </form>
-        <ul id="produc-list"></ul>
-    </div>
-    <button onclick="window.location.href='productos.html'">Ver Productos</button>
-    <script src="scripts.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy"
+            content="upgrade-insecure-requests" />
+        <title>Vivero Jade</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Productos</h1>
+        <div id="app">
+            <form id="produc-form">
+                <input type="text" id="produc-nombre" placeholder="Nombre"
+                    required>
+                <input type="text" id="produc-descripcion"
+                    placeholder="Descripción" required>
+                <input type="number" id="produc-precio" placeholder="Precio"
+                    required>
+                <input type="number" id="produc-stock" placeholder="Stock"
+                    required>
+                <select id="produc-tipo" placeholder="Tipo Producto">
+                    <option value selected disabled>Tipo Producto</option>
+                </select>
+                <input type="url" id="produc-image" placeholder="Imagen URL"
+                    required>
+                <button type="submit">Agregar Producto</button>
+            </form>
+            <ul id="produc-list"></ul>
+        </div>
+        <button onclick="window.location.href='productos.html'">Ver
+            Productos</button>
+        <button onclick="window.location.href='usuarios.html'">Ver
+            Usuarios</button>
+        <button onclick="window.location.href='registro.html'">Ver formulario de
+            registro</button>
+        <script src="scripts.js"></script>
+    </body>
 </html>
