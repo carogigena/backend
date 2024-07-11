@@ -64,6 +64,7 @@ async function addUsuario() {
     })
         .then(response => {
             console.log(response);
+            location.href='index.html';
         })
 }
 
