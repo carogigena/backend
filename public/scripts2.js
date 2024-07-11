@@ -113,25 +113,3 @@ function deleteUsuario(id) {
 }
 
 
-document.getElementById(formlogin).addEventListener('submit', (event) => {
-    event.preventDefault();
-});
-
-    async function login(){
-
-
-  const username = document.getElementById("loginusuario").value;
-  const pass = document.getElementById("loginpassword").value;
-
-    console.log(JSON.stringify({
-        username:usuario, pass:password}));
-
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ username, pass }),
-
-  };
-    }
