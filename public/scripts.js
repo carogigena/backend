@@ -12,10 +12,11 @@ const apiUrl ='http://jcgigena.alwaysdata.net';// 'http://localhost:3000';//'htt
 document.getElementById('produc-form').addEventListener('submit', (event) => {
     event.preventDefault();
     addProducto();
+    
 });
 
 
-async function listaProductos() {
+/*async function listaProductos() {
     await fetch(`${apiUrl}/productos`, {
         method: 'GET',
     })
@@ -34,6 +35,36 @@ async function listaProductos() {
                 li.innerHTML += `<button onclick="editProducto(${produc.idproducto})">Editar</button>`;
                 li.innerHTML += `<button onclick="deleteProducto(${produc.idproducto})">Eliminar</button>`;
                 producList.appendChild(li);
+            });
+
+        });
+}
+*/
+async function listaProductos() {
+    await fetch(`${apiUrl}/productos`, {
+        method: 'GET',
+    })
+        .then(response => response.json())
+        .then(data => {
+            const producList = document.getElementById('interior-container');
+            producList.innerHTML = '';
+            data.forEach(produc => {
+                const div = document.createElement('div');
+                div.innerHTML = `<div class="item-interior" >
+                    <div class="card" style="width: 24rem;">
+                        <img src="${produc.link_img}" class="card-img-top"
+                            alt="Potus">
+                        <div class="card-body botanico">
+                            <h5 class="card-title">${produc.nombre}</h5>
+                            <button class="btn btn-light" onclick="editProducto(${produc.idproducto})">Editar</button>
+                            <button class="btn btn-light" onclick="deleteProducto(${produc.idproducto})">Eliminar</button>
+                        </div>
+                    </div>
+                </div>`;
+                producList.appendChild(div);
+
+            
+            
             });
 
         });
