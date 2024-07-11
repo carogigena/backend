@@ -1,6 +1,6 @@
 const apiUrl = 'http://jcgigena.alwaysdata.net';
 
-document.getElementById(formularioregistro).addEventListener('submit', (event) => {
+document.getElementById('formularioregistro').addEventListener('submit', (event) => {
     event.preventDefault();
     addUsuario();
 
